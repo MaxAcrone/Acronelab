@@ -1,0 +1,87 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#312e81;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1a2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="saasPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cloudBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="motionOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ea580c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00cccc;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow4">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow4">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient4)"/>
+  
+  <!-- Sleek SaaS dashboard -->
+  <rect x="50" y="100" width="700" height="250" fill="url(#saasPurple)" opacity="0.2" filter="url(#glow4)"/>
+  <rect x="70" y="120" width="660" height="210" fill="url(#cloudBlue)" opacity="0.3" filter="url(#glow4)"/>
+  
+  <!-- Motion graphics rendering in real-time -->
+  <rect x="100" y="150" width="200" height="120" fill="url(#motionOrange)" opacity="0.4" filter="url(#glow4)"/>
+  <rect x="320" y="150" width="200" height="120" fill="url(#neonCyan)" opacity="0.4" filter="url(#glow4)"/>
+  <rect x="540" y="150" width="200" height="120" fill="url(#saasPurple)" opacity="0.4" filter="url(#glow4)"/>
+  
+  <!-- Glowing timelines -->
+  <rect x="100" y="290" width="600" height="8" fill="url(#motionOrange)" opacity="0.8" filter="url(#glow4)"/>
+  <rect x="100" y="310" width="400" height="6" fill="url(#neonCyan)" opacity="0.8" filter="url(#glow4)"/>
+  <rect x="100" y="330" width="500" height="4" fill="url(#saasPurple)" opacity="0.8" filter="url(#glow4)"/>
+  
+  <!-- Animated previews -->
+  <circle cx="200" cy="200" r="30" fill="url(#motionOrange)" opacity="0.7" filter="url(#glow4)"/>
+  <circle cx="420" cy="200" r="35" fill="url(#neonCyan)" opacity="0.7" filter="url(#glow4)"/>
+  <circle cx="640" cy="200" r="32" fill="url(#saasPurple)" opacity="0.7" filter="url(#glow4)"/>
+  
+  <!-- Cloud-based interface elements -->
+  <rect x="150" y="50" width="100" height="30" fill="url(#cloudBlue)" opacity="0.6" filter="url(#glow4)"/>
+  <rect x="300" y="50" width="100" height="30" fill="url(#motionOrange)" opacity="0.6" filter="url(#glow4)"/>
+  <rect x="450" y="50" width="100" height="30" fill="url(#neonCyan)" opacity="0.6" filter="url(#glow4)"/>
+  
+  <!-- Abstract motion-inspired background -->
+  <path d="M 0 80 Q 200 60 400 80 T 800 80" stroke="url(#motionOrange)" stroke-width="3" fill="none" opacity="0.5" filter="url(#glow4)"/>
+  <path d="M 0 380 Q 200 400 400 380 T 800 380" stroke="url(#neonCyan)" stroke-width="3" fill="none" opacity="0.5" filter="url(#glow4)"/>
+  
+  <!-- Project title -->
+  <text x="400" y="40" text-anchor="middle" fill="url(#saasPurple)" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#strongGlow4)">
+    FrameFlux
+  </text>
+  <text x="400" y="70" text-anchor="middle" fill="url(#cloudBlue)" font-family="Arial, sans-serif" font-size="18" filter="url(#glow4)">
+    Motion Design SaaS
+  </text>
+  
+  <!-- Tech stack -->
+  <text x="50" y="430" fill="url(#motionOrange)" font-family="Arial, sans-serif" font-size="14" filter="url(#glow4)">
+    SaaS • Cloud Rendering • Blockchain • Animation
+  </text>
+</svg>

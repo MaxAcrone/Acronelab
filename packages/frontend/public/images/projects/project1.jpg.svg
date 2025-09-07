@@ -1,0 +1,104 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1a0a2e;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2d1b69;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f23;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="devilRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4444;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#cc0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#990000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="neonGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00cc66;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="streetBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0044cc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gangPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb700;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient)"/>
+  
+  <!-- Street scene with buildings -->
+  <rect x="0" y="200" width="800" height="250" fill="url(#streetBlue)" opacity="0.3" filter="url(#glow)"/>
+  <rect x="50" y="150" width="200" height="100" fill="url(#devilRed)" opacity="0.4" filter="url(#glow)"/>
+  <rect x="300" y="120" width="200" height="130" fill="url(#gangPurple)" opacity="0.4" filter="url(#glow)"/>
+  <rect x="550" y="140" width="200" height="110" fill="url(#neonGreen)" opacity="0.4" filter="url(#glow)"/>
+  
+  <!-- Groof Street gang members -->
+  <!-- Character 1 - Red demon with horns -->
+  <circle cx="200" cy="300" r="40" fill="url(#devilRed)" opacity="0.8" filter="url(#glow)"/>
+  <polygon points="200,260 190,250 210,250" fill="url(#devilRed)" opacity="0.9" filter="url(#glow)"/>
+  <polygon points="200,260 180,250 200,250" fill="url(#devilRed)" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- Character 2 - Blue demon -->
+  <circle cx="400" cy="280" r="35" fill="url(#streetBlue)" opacity="0.8" filter="url(#glow)"/>
+  <polygon points="400,245 385,235 415,235" fill="url(#streetBlue)" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- Character 3 - Green demon -->
+  <circle cx="600" cy="290" r="38" fill="url(#neonGreen)" opacity="0.8" filter="url(#glow)"/>
+  <polygon points="600,252 580,242 620,242" fill="url(#neonGreen)" opacity="0.9" filter="url(#glow)"/>
+  
+  <!-- DevilTroid metaverse elements -->
+  <rect x="100" y="100" width="600" height="60" fill="url(#gangPurple)" opacity="0.3" filter="url(#glow)"/>
+  <rect x="120" y="120" width="560" height="20" fill="url(#neonGreen)" opacity="0.5" filter="url(#glow)"/>
+  
+  <!-- NFT elements floating -->
+  <circle cx="150" cy="80" r="25" fill="url(#devilRed)" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="650" cy="100" r="30" fill="url(#neonGreen)" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="100" cy="380" r="28" fill="url(#streetBlue)" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="700" cy="400" r="32" fill="url(#gangPurple)" opacity="0.7" filter="url(#glow)"/>
+  
+  <!-- P2E game elements -->
+  <rect x="50" y="350" width="150" height="40" fill="url(#gold)" opacity="0.6" filter="url(#glow)"/>
+  <rect x="300" y="360" width="150" height="30" fill="url(#devilRed)" opacity="0.6" filter="url(#glow)"/>
+  <rect x="550" y="355" width="150" height="35" fill="url(#neonGreen)" opacity="0.6" filter="url(#glow)"/>
+  
+  <!-- Project title -->
+  <text x="400" y="50" text-anchor="middle" fill="url(#devilRed)" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#strongGlow)">
+    GroofStreet
+  </text>
+  <text x="400" y="80" text-anchor="middle" fill="url(#neonGreen)" font-family="Arial, sans-serif" font-size="18" filter="url(#glow)">
+    NFT Collection & P2E Game
+  </text>
+  
+  <!-- Tech stack -->
+  <text x="50" y="430" fill="url(#gangPurple)" font-family="Arial, sans-serif" font-size="14" filter="url(#glow)">
+    NFT • P2E • Metaverse • Strategic MMORPG
+  </text>
+  
+  <!-- Street signs -->
+  <text x="200" y="200" fill="url(#gold)" font-family="Arial, sans-serif" font-size="16" font-weight="bold" filter="url(#glow)">
+    GROOF STR.
+  </text>
+  <text x="500" y="180" fill="url(#neonGreen)" font-family="Arial, sans-serif" font-size="14" filter="url(#glow)">
+    DevilTroid
+  </text>
+</svg>

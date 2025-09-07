@@ -1,0 +1,89 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e1b69;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eduBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1d4ed8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="learningGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="certificateGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b45309;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="metaverse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow5">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow5">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient5)"/>
+  
+  <!-- Gamified learning hub in metaverse -->
+  <rect x="50" y="100" width="700" height="250" fill="url(#eduBlue)" opacity="0.2" filter="url(#glow5)"/>
+  <rect x="70" y="120" width="660" height="210" fill="url(#learningGreen)" opacity="0.3" filter="url(#glow5)"/>
+  
+  <!-- Student avatars earning NFT badges -->
+  <circle cx="150" cy="200" r="25" fill="url(#eduBlue)" opacity="0.8" filter="url(#glow5)"/>
+  <circle cx="300" cy="180" r="30" fill="url(#learningGreen)" opacity="0.8" filter="url(#glow5)"/>
+  <circle cx="500" cy="190" r="28" fill="url(#certificateGold)" opacity="0.8" filter="url(#glow5)"/>
+  <circle cx="650" cy="200" r="26" fill="url(#metaverse)" opacity="0.8" filter="url(#glow5)"/>
+  
+  <!-- Holographic certificates floating in space -->
+  <rect x="200" y="150" width="80" height="60" fill="url(#certificateGold)" opacity="0.7" filter="url(#glow5)"/>
+  <rect x="400" y="140" width="80" height="60" fill="url(#certificateGold)" opacity="0.7" filter="url(#glow5)"/>
+  <rect x="600" y="145" width="80" height="60" fill="url(#certificateGold)" opacity="0.7" filter="url(#glow5)"/>
+  
+  <!-- Futuristic classroom with glowing quests -->
+  <rect x="100" y="300" width="600" height="80" fill="url(#metaverse)" opacity="0.4" filter="url(#glow5)"/>
+  <rect x="120" y="320" width="560" height="40" fill="url(#eduBlue)" opacity="0.5" filter="url(#glow5)"/>
+  
+  <!-- Interactive animations -->
+  <circle cx="100" cy="100" r="20" fill="url(#learningGreen)" opacity="0.8" filter="url(#glow5)"/>
+  <circle cx="700" cy="120" r="25" fill="url(#certificateGold)" opacity="0.8" filter="url(#glow5)"/>
+  <circle cx="150" cy="380" r="22" fill="url(#metaverse)" opacity="0.8" filter="url(#glow5)"/>
+  <circle cx="650" cy="400" r="24" fill="url(#eduBlue)" opacity="0.8" filter="url(#glow5)"/>
+  
+  <!-- Quest indicators -->
+  <polygon points="200,350 220,330 240,350 220,370" fill="url(#learningGreen)" opacity="0.8" filter="url(#glow5)"/>
+  <polygon points="400,350 420,330 440,350 420,370" fill="url(#certificateGold)" opacity="0.8" filter="url(#glow5)"/>
+  <polygon points="600,350 620,330 640,350 620,370" fill="url(#metaverse)" opacity="0.8" filter="url(#glow5)"/>
+  
+  <!-- Project title -->
+  <text x="400" y="50" text-anchor="middle" fill="url(#eduBlue)" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#strongGlow5)">
+    EduVerse
+  </text>
+  <text x="400" y="80" text-anchor="middle" fill="url(#learningGreen)" font-family="Arial, sans-serif" font-size="18" filter="url(#glow5)">
+    Blockchain Learning Hub
+  </text>
+  
+  <!-- Tech stack -->
+  <text x="50" y="430" fill="url(#certificateGold)" font-family="Arial, sans-serif" font-size="14" filter="url(#glow5)">
+    Education • Blockchain • NFT • Gamification
+  </text>
+</svg>

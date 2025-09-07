@@ -1,0 +1,205 @@
+---
+description:
+globs:
+# Modern Web Development Rules for Cursor IDE
+# Updated for 2025 - Latest technologies and best practices
+
+## Core Development Principles
+- Follow SOLID principles and clean architecture patterns
+- Prioritize type safety, performance, and developer experience
+- Use composition over inheritance
+- Implement proper error boundaries and error handling
+- Write self-documenting code with minimal but meaningful comments
+
+## Frontend Stack & Rules
+
+### React 19+ with Modern Patterns
+- Use React 19 features: useActionState, useFormStatus, useOptimistic
+- Prefer function components with hooks over class components
+- Use Server Components for data fetching when using Next.js 15+
+- Implement Suspense boundaries for loading states
+- Use startTransition for non-urgent updates
+- Prefer useMemo and useCallback for performance optimization
+
+### Next.js 15+ App Router
+- Use App Router exclusively (not Pages Router)
+- Implement proper file-based routing with page.tsx, layout.tsx, loading.tsx, error.tsx
+- Use Server Actions for form submissions and mutations
+- Implement proper metadata API for SEO
+- Use next/image with proper optimization
+- Leverage Partial Prerendering (PPR) when stable
+
+### TypeScript 5.6+
+- Use strict mode with all strict flags enabled
+- Prefer type assertions over any type
+- Use branded types for domain-specific values
+- Implement proper discriminated unions
+- Use const assertions for immutable data
+- Leverage template literal types for better type safety
+
+### Styling & UI
+- **Primary**: TailwindCSS 4.0+ with CSS-in-JS features
+- Use Tailwind's new engine and modern features
+- Implement design system with CSS custom properties
+- Use PostCSS for advanced CSS features
+- Consider shadcn/ui v2 for component library
+- Alternative: Stitches or Vanilla Extract for CSS-in-JS
+
+### State Management
+- **Primary**: Zustand 5+ for client state
+- Use React Query (TanStack Query) v5 for server state
+- Implement Jotai for atomic state management in complex apps
+- Use Valtio for mutable state when needed
+- Avoid Redux unless specifically required by legacy code
+
+## Backend Stack & Rules
+
+### Runtime & Framework
+- **Primary**: Bun 1.1+ as JavaScript runtime
+- **Framework**: Hono.js for API development (faster than Express)
+- Alternative: Fastify 5+ for Node.js projects
+- Use Elysia.js for TypeScript-first backend development
+- Consider Deno 2.0+ for edge computing scenarios
+
+### Database & ORM
+- **Primary**: PostgreSQL 16+ with proper indexing strategies
+- **ORM**: Drizzle ORM (type-safe, lightweight)
+- Alternative: Prisma 5+ for complex schemas
+- Use database migrations with proper versioning
+- Implement connection pooling (PgBouncer)
+- Consider Supabase for managed PostgreSQL with real-time features
+
+### Caching & Performance
+- **Redis 7+**: For session storage and caching
+- **Upstash**: For serverless Redis needs
+- Implement proper HTTP caching headers
+- Use CDN (Cloudflare/Vercel) for static assets
+- Consider IndexedDB for client-side caching
+
+### Authentication & Security
+- **Auth.js v5** (NextAuth.js successor) for authentication
+- Implement proper CSRF protection
+- Use secure HTTP headers (helmet.js)
+- Implement rate limiting with proper algorithms
+- Use bcrypt or Argon2 for password hashing
+- Implement proper JWT handling with refresh tokens
+
+## DevOps & Deployment
+
+### Containerization & Deployment
+- Use Docker with multi-stage builds
+- Implement proper .dockerignore files
+- **Primary deployment**: Vercel for Next.js apps
+- **Alternative**: Railway, Fly.io, or Render for full-stack apps
+- Use GitHub Actions for CI/CD pipelines
+- Implement proper environment variable management
+
+### Monitoring & Analytics
+- **Sentry**: For error tracking and performance monitoring
+- **Vercel Analytics**: For web vitals and performance
+- **PostHog**: For product analytics
+- Implement proper logging with structured logs
+- Use health checks for production monitoring
+
+## Development Tools & Workflow
+
+### Package Management
+- **Primary**: pnpm 9+ for faster installs and better disk usage
+- Use proper lockfile management
+- Implement workspace/monorepo structure with Turborepo
+- Keep dependencies up to date with automated tools
+
+### Code Quality & Testing
+- **ESLint 9+** with flat config format
+- **Prettier 3+** for code formatting
+- **Biome**: Alternative to ESLint/Prettier (faster, Rust-based)
+- **Vitest**: For unit testing (faster than Jest)
+- **Playwright**: For end-to-end testing
+- **TypeScript strict mode**: All strict flags enabled
+
+### Build Tools
+- **Vite 6+**: For fast development and building
+- **Turbopack**: For Next.js projects (when stable)
+- **tsup**: For TypeScript library bundling
+- **Rollup**: For complex bundling scenarios
+
+## API & Integration
+
+### API Design
+- Follow RESTful principles or use GraphQL with proper schema design
+- Implement proper API versioning
+- Use OpenAPI 3.1+ specification for documentation
+- Implement proper error handling with consistent error formats
+- Use proper HTTP status codes
+
+### Real-time Features
+- **Socket.io 4+**: For WebSocket connections
+- **Pusher**: For managed real-time features
+- **Server-Sent Events**: For one-way real-time updates
+- Consider WebRTC for peer-to-peer communications
+
+## Mobile & Cross-Platform
+
+### React Native (if needed)
+- Use Expo SDK 52+ for managed workflow
+- Implement proper navigation with React Navigation 7+
+- Use proper state management (same as web)
+- Implement proper testing strategies
+
+### Progressive Web App
+- Implement service workers for offline functionality
+- Use proper manifest.json configuration
+- Implement push notifications
+- Follow PWA best practices
+
+## Performance & Optimization
+
+### Bundle Optimization
+- Implement proper code splitting with React.lazy
+- Use dynamic imports for route-based splitting
+- Optimize images with proper formats (WebP, AVIF)
+- Implement proper preloading strategies
+
+### Core Web Vitals
+- Optimize Largest Contentful Paint (LCP)
+- Minimize Cumulative Layout Shift (CLS)
+- Optimize First Input Delay (FID) / Interaction to Next Paint (INP)
+- Use performance monitoring tools
+
+## Security Best Practices
+- Implement Content Security Policy (CSP)
+- Use HTTPS everywhere with proper certificate management
+- Sanitize user inputs properly
+- Implement proper CORS configuration
+- Use security headers (HSTS, X-Frame-Options, etc.)
+- Regular dependency vulnerability scanning
+
+## Environment Configuration
+- Use environment-specific configurations
+- Implement proper secrets management
+- Use .env files with proper validation
+- Never commit sensitive data to version control
+- Use proper staging and production environments
+
+## Code Organization
+- Follow domain-driven design principles
+- Use proper folder structure and naming conventions
+- Implement barrel exports for clean imports
+- Use absolute imports with proper path mapping
+- Keep components small and focused on single responsibility
+
+## Documentation
+- Maintain up-to-date README.md files
+- Document API endpoints properly
+- Use JSDoc for complex functions
+- Implement proper changelog management
+- Keep architecture decisions recorded (ADRs)
+
+## AI & Modern Features
+- Implement AI features using Vercel AI SDK
+- Consider OpenAI API integration for AI features
+- Use proper streaming for AI responses
+- Implement proper rate limiting for AI endpoints
+- Consider edge functions for AI processing
+alwaysApply: false
+---

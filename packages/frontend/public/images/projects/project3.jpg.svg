@@ -1,0 +1,88 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#0f4c3a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2d5a27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2e1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ecoGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="treeGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="turquoise" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blockchain" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow3">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient3)"/>
+  
+  <!-- Futuristic eco-dashboard -->
+  <rect x="50" y="100" width="700" height="200" fill="url(#ecoGreen)" opacity="0.2" filter="url(#glow3)"/>
+  <rect x="70" y="120" width="660" height="160" fill="url(#turquoise)" opacity="0.3" filter="url(#glow3)"/>
+  
+  <!-- NFT trees growing in real-time -->
+  <polygon points="150,350 120,300 140,300 130,250 150,250 160,300 180,300" fill="url(#treeGreen)" filter="url(#glow3)"/>
+  <polygon points="300,350 270,300 290,300 280,250 300,250 310,300 330,300" fill="url(#ecoGreen)" filter="url(#glow3)"/>
+  <polygon points="500,350 470,300 490,300 480,250 500,250 510,300 330,300" fill="url(#treeGreen)" filter="url(#glow3)"/>
+  <polygon points="650,350 620,300 640,300 630,250 650,250 660,300 680,300" fill="url(#ecoGreen)" filter="url(#glow3)"/>
+  
+  <!-- Blockchain data visualized as glowing lines -->
+  <line x1="100" y1="150" x2="700" y2="150" stroke="url(#blockchain)" stroke-width="3" opacity="0.6" filter="url(#glow3)"/>
+  <line x1="100" y1="200" x2="700" y2="200" stroke="url(#turquoise)" stroke-width="2" opacity="0.5" filter="url(#glow3)"/>
+  <line x1="100" y1="250" x2="700" y2="250" stroke="url(#ecoGreen)" stroke-width="2" opacity="0.5" filter="url(#glow3)"/>
+  
+  <!-- Blockchain network nodes -->
+  <circle cx="200" cy="150" r="15" fill="url(#blockchain)" opacity="0.8" filter="url(#glow3)"/>
+  <circle cx="400" cy="150" r="18" fill="url(#turquoise)" opacity="0.8" filter="url(#glow3)"/>
+  <circle cx="600" cy="150" r="16" fill="url(#ecoGreen)" opacity="0.8" filter="url(#glow3)"/>
+  
+  <!-- IoT sensors -->
+  <rect x="120" y="200" width="40" height="25" fill="url(#ecoGreen)" opacity="0.8" filter="url(#glow3)"/>
+  <rect x="320" y="180" width="40" height="25" fill="url(#turquoise)" opacity="0.8" filter="url(#glow3)"/>
+  <rect x="520" y="190" width="40" height="25" fill="url(#blockchain)" opacity="0.8" filter="url(#glow3)"/>
+  
+  <!-- Nature blending with digital holograms -->
+  <circle cx="100" cy="100" r="30" fill="url(#ecoGreen)" opacity="0.6" filter="url(#glow3)"/>
+  <circle cx="700" cy="120" r="35" fill="url(#turquoise)" opacity="0.6" filter="url(#glow3)"/>
+  <circle cx="150" cy="400" r="25" fill="url(#treeGreen)" opacity="0.6" filter="url(#glow3)"/>
+  <circle cx="650" cy="420" r="28" fill="url(#blockchain)" opacity="0.6" filter="url(#glow3)"/>
+  
+  <!-- Project title -->
+  <text x="400" y="50" text-anchor="middle" fill="url(#ecoGreen)" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#strongGlow3)">
+    GreenChain
+  </text>
+  <text x="400" y="80" text-anchor="middle" fill="url(#turquoise)" font-family="Arial, sans-serif" font-size="18" filter="url(#glow3)">
+    Eco NFT Initiative
+  </text>
+  
+  <!-- Tech stack -->
+  <text x="50" y="430" fill="url(#blockchain)" font-family="Arial, sans-serif" font-size="14" filter="url(#glow3)">
+    Blockchain • IoT • Sustainability • NFT
+  </text>
+</svg>
