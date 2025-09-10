@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"components\\\\ClientCursorEffect.tsx -> ./CursorEffect":{"id":2779,"files":["static/chunks/545-86d04728645209b7.js","static/chunks/779.1e452d8602c9216c.js"]}}';
+self.__REACT_LOADABLE_MANIFEST="{\"components\\\\ClientCursorEffect.tsx -> ./CursorEffect\":{\"id\":\"components\\\\ClientCursorEffect.tsx -> ./CursorEffect\",\"files\":[\"static/chunks/_app-pages-browser_src_components_CursorEffect_tsx.js\"]}}"
