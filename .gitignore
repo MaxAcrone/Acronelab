@@ -1,0 +1,8 @@
+node_modules/
+.next/
+*.zip
+*.tar.gz
+.cache/
+dist/
+out/
+node_modules
