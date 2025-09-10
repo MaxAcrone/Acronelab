@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components\\\\ClientCursorEffect.tsx -> ./CursorEffect\":{\"id\":\"components\\\\ClientCursorEffect.tsx -> ./CursorEffect\",\"files\":[\"static/chunks/_app-pages-browser_src_components_CursorEffect_tsx.js\"]}}"
