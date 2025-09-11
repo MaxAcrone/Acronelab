@@ -1,13 +1,10 @@
 [build]
-  command = "cd packages/frontend && npm run build"
-  publish = "packages/frontend/.next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  command = "cd packages/frontend && npm install && npm run build && npm run export"
+  publish = "packages/frontend/out"
 
 [images]
 remote_images = [
-  "^(?:https:\\/(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"
+  "^(?:https:\/(?:\/(?!\.)(?:(?:(?!(?:^|\/)\.).)*?)|$))$"
 ]
 
 [[headers]]
@@ -37,7 +34,7 @@ status = 200
   [context.production]
     [context.production.images]
     remote_images = [
-      "^(?:https:\\/(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"
+      "^(?:https:\/(?:\/(?!\.)(?:(?:(?!(?:^|\/)\.).)*?)|$))$"
     ]
     [[context.production.headers]]
     for = "/_next/static/*"
@@ -47,7 +44,7 @@ status = 200
   [context.master]
     [context.master.images]
     remote_images = [
-      "^(?:https:\\/(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$"
+      "^(?:https:\/(?:\/(?!\.)(?:(?:(?!(?:^|\/)\.).)*?)|$))$"
     ]
     [[context.master.headers]]
     for = "/_next/static/*"
