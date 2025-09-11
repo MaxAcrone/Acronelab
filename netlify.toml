@@ -1,0 +1,13 @@
+[build]
+  command = "cd packages/frontend && npm install && npm run build && npm run export"
+  publish = "packages/frontend/out"
+
+[images]
+remote_images = [
+  "^(?:https:\\/\\/(?!\\.)(?:(?:(?!(?:^|\\/)\.).)*?)|$)$"
+]
+
+[[headers]]
+for = "/_next/static/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
