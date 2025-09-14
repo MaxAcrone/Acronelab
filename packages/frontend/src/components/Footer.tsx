@@ -83,9 +83,9 @@ export default function Footer() {
               <motion.div 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }}
-                className="text-2xl font-bold cursor-pointer inline-block"
+                className="cursor-pointer inline-block"
               >
-                Acronelab<span className="highlight">.</span>
+                <img src="/images/projects/Logo Acronelab.png" alt="Acronelab Logo" className="h-8" />
               </motion.div>
             </Link>
             <p className="text-white/50 mt-3 mb-4">Web3 Development & Design Studio</p>

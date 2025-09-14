@@ -12,69 +12,9 @@ export declare class AuthService {
         access_token: string;
         refresh_token: string;
     }>;
-    register(createUserDto: any): Promise<{
-        email: string;
-        firstName: string | null;
-        lastName: string | null;
-        id: string;
-        avatar: string | null;
-        role: string;
-        isActive: boolean;
-        createdAt: Date;
-        updatedAt: Date;
-    }>;
+    register(createUserDto: any): Promise<any>;
     refreshToken(userId: string): Promise<{
-        user: {
-            profile: {
-                id: string;
-                createdAt: Date;
-                updatedAt: Date;
-                userId: string;
-                bio: string | null;
-                website: string | null;
-                location: string | null;
-                company: string | null;
-                jobTitle: string | null;
-                skills: string | null;
-                experience: string | null;
-                education: string | null;
-                socialLinks: string | null;
-            };
-            subscriptions: {
-                id: string;
-                createdAt: Date;
-                updatedAt: Date;
-                userId: string;
-                stripeCustomerId: string | null;
-                stripePriceId: string | null;
-                stripeSubscriptionId: string | null;
-                status: string;
-                currentPeriodStart: Date | null;
-                currentPeriodEnd: Date | null;
-                cancelAtPeriodEnd: boolean;
-            }[];
-            payments: {
-                id: string;
-                createdAt: Date;
-                updatedAt: Date;
-                userId: string;
-                status: string;
-                stripePaymentIntentId: string;
-                amount: number;
-                currency: string;
-                description: string | null;
-                metadata: string | null;
-            }[];
-            email: string;
-            firstName: string | null;
-            lastName: string | null;
-            id: string;
-            avatar: string | null;
-            role: string;
-            isActive: boolean;
-            createdAt: Date;
-            updatedAt: Date;
-        };
+        user: any;
         access_token: string;
         refresh_token: string;
     }>;

@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
-import { sendBriefEmail, BriefFormData } from '../lib/emailService';
 
 interface BriefModalProps {
   isOpen: boolean;
@@ -30,7 +29,7 @@ const TIMELINES = ['ASAP', '1-2 months', '3-6 months', '6+ months'];
 const BriefModal = ({ isOpen, onClose }: BriefModalProps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [formData, setFormData] = useState<BriefFormData>({
+  const [formData, setFormData] = useState({
     projectType: '',
     projectGoals: '',
     targetAudience: '',
@@ -45,39 +44,6 @@ const BriefModal = ({ isOpen, onClose }: BriefModalProps) => {
 
   const handleNext = () => {
     if (currentStep < 10) setCurrentStep(currentStep + 1);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      // Отправка брифа через EmailJS
-      const success = await sendBriefEmail(formData);
-      
-      if (success) {
-        console.log('Brief submitted successfully:', formData);
-        onClose();
-        setCurrentStep(1);
-        setFormData({ 
-          projectType: '', 
-          projectGoals: '', 
-          targetAudience: '', 
-          designPreferences: '', 
-          technicalRequirements: '', 
-          contentAssets: '', 
-          budget: '', 
-          timeline: '', 
-          successMetrics: '', 
-          email: '' 
-        });
-      } else {
-        console.error('Failed to submit brief');
-        // Можно добавить уведомление об ошибке
-      }
-    } catch (error) {
-      console.error('Error submitting brief:', error);
-      // Можно добавить уведомление об ошибке
-    }
   };
 
   // Prevent body scroll when modal is open
@@ -145,7 +111,8 @@ const BriefModal = ({ isOpen, onClose }: BriefModalProps) => {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form name="brief" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="brief" />
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-white mb-4">
                   {STEPS[currentStep - 1].question}
@@ -286,7 +253,7 @@ const BriefModal = ({ isOpen, onClose }: BriefModalProps) => {
                 )}
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
+              <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0 mt-6">
                 {currentStep > 1 && (
                   <button
                     type="button"
@@ -319,9 +286,9 @@ const BriefModal = ({ isOpen, onClose }: BriefModalProps) => {
                 ) : (
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-white text-black rounded-lg hover:bg-white/90 transition-colors ml-auto"
+                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-colors"
                   >
-                    Submit Brief
+                    Send
                   </button>
                 )}
               </div>

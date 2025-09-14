@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link rel="icon" href="/favicon.png.svg" />
+        <link rel="icon" href="/images/projects/favicon-16x16.png" />
       </head>
       <body>
         <ClientCursorEffect />

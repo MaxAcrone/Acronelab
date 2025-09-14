@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { sendContactEmail, ContactFormData } from '../../lib/emailService';
 const FADE_IN_UP = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
@@ -62,55 +61,9 @@ const ContactCard = ({ children, className = "" }: { children: React.ReactNode; 
 };
 
 export default function Contact() {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
   const [activeTab, setActiveTab] = useState<'form' | 'social'>('form');
-  
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Отправка формы через EmailJS
-      const success = await sendContactEmail(formData);
-      
-      if (success) {
-        // Очистить форму после успешной отправки
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setSubmitStatus('success');
-        
-        // Сбросить статус через несколько секунд
-        setTimeout(() => setSubmitStatus(null), 5000);
-      } else {
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus(null), 5000);
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-      
-      // Сбросить статус через несколько секунд
-      setTimeout(() => setSubmitStatus(null), 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  
   return (
     <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden">
       <Header />
@@ -265,19 +218,8 @@ export default function Contact() {
                 <ContactCard className="p-8">
                   <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
                   
-                  {submitStatus === 'success' && (
-                    <div className="mb-6 p-4 bg-green-900/20 border border-green-500/30 rounded-xl">
-                      <p className="text-green-400">Message sent successfully! I'll get back to you soon.</p>
-                    </div>
-                  )}
-                  
-                  {submitStatus === 'error' && (
-                    <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-xl">
-                      <p className="text-red-400">Error sending message. Please try again.</p>
-                    </div>
-                  )}
-                  
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div>
                       <label className="block text-sm font-medium text-white/70 mb-2" htmlFor="name">
                         Name
@@ -286,14 +228,11 @@ export default function Contact() {
                         type="text"
                         id="name"
                         name="name"
-                        value={formData.name}
-                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all text-white placeholder-white/50"
                         placeholder="Your name"
                       />
                     </div>
-                    
                     <div>
                       <label className="block text-sm font-medium text-white/70 mb-2" htmlFor="email">
                         Email
@@ -302,14 +241,11 @@ export default function Contact() {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all text-white placeholder-white/50"
-                        placeholder="your@email.com"
+                        placeholder="Your email"
                       />
                     </div>
-                    
                     <div>
                       <label className="block text-sm font-medium text-white/70 mb-2" htmlFor="subject">
                         Subject
@@ -318,37 +254,32 @@ export default function Contact() {
                         type="text"
                         id="subject"
                         name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all text-white placeholder-white/50"
                         placeholder="What's this about?"
                       />
                     </div>
-                    
-                    <div>
+                    <div className="sm:col-span-2">
                       <label className="block text-sm font-medium text-white/70 mb-2" htmlFor="message">
-                        Project Description
+                        Message
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleChange}
+                        rows={5}
                         required
-                        rows={4}
-                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all resize-none text-white placeholder-white/50"
-                        placeholder="Tell me about your project..."
-                      />
+                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 transition-all text-white placeholder-white/50 resize-none"
+                        placeholder="Your message"
+                      ></textarea>
                     </div>
-                    
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-white/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </button>
+                    <div className="sm:col-span-2 flex justify-center mt-6">
+                      <button
+                        type="submit"
+                        className="w-full sm:w-auto px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition-colors"
+                      >
+                        Send
+                      </button>
+                    </div>
                   </form>
                 </ContactCard>
               </motion.div>

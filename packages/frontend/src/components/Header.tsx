@@ -30,8 +30,7 @@ export default function Header() {
             whileTap={{ scale: 0.98 }}
             className="flex items-center"
           >
-            {/* Чистый текстовый логотип без значка */}
-            <span className="text-white text-xl font-medium">AcroneLab</span>
+            <img src="/images/projects/Logo Acronelab.png" alt="Acronelab Logo" className="h-8" />
           </motion.div>
         </Link>
         

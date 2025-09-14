@@ -8,36 +8,13 @@ export declare class PaymentsService {
     constructor(configService: ConfigService, prisma: PrismaService);
     createCustomer(userId: string, email: string, firstName?: string, lastName?: string): Promise<Stripe.Response<Stripe.Customer>>;
     createSubscription(userId: string, priceId: string): Promise<{
-        subscription: import(".prisma/client").Prisma.BatchPayload;
+        subscription: any;
         stripeSubscription: Stripe.Response<Stripe.Subscription>;
     }>;
-    cancelSubscription(userId: string): Promise<import(".prisma/client").Prisma.BatchPayload>;
-    getSubscription(userId: string): Promise<{
-        userId: string;
-        id: string;
-        stripeCustomerId: string | null;
-        stripePriceId: string | null;
-        stripeSubscriptionId: string | null;
-        status: string;
-        currentPeriodStart: Date | null;
-        currentPeriodEnd: Date | null;
-        cancelAtPeriodEnd: boolean;
-        createdAt: Date;
-        updatedAt: Date;
-    }>;
+    cancelSubscription(userId: string): Promise<any>;
+    getSubscription(userId: string): Promise<any>;
     createPaymentIntent(userId: string, amount: number, currency?: string): Promise<{
-        payment: {
-            userId: string;
-            id: string;
-            status: string;
-            createdAt: Date;
-            updatedAt: Date;
-            stripePaymentIntentId: string;
-            amount: number;
-            currency: string;
-            description: string | null;
-            metadata: string | null;
-        };
+        payment: any;
         clientSecret: string;
     }>;
     handleWebhook(signature: string, payload: Buffer): Promise<{
